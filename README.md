@@ -18,12 +18,19 @@
 
 ## 配置说明
 
-在 NoneBot2 的配置文件中添加以下配置：
+在 NoneBot2 的pyproject.toml文件中添加以下配置：
+
+    在dependencies = [...] 中添加：
+    "nonebot-plugin-deltaforce-price-search>=x.x.x" # 请替换为最新版本号
+    然后在[tool.nonebot.plugins] 添加：
+    "nonebot-plugin-deltaforce-price-search" = ["nonebot_plugin_deltaforce_price_search"]
+
+## 数据配置项 - 可选
 
     价格数据源URL（可选）
     price_data_url: [感谢大佬的数据](https://raw.githubusercontent.com/orzice/DeltaForcePrice/master/price.json)
     缓存文件路径（可选）
-    cache_file: "bullet_price_cache.json"
+    cache_file: "data/bullet_price_cache.json"
     缓存过期时间（秒，可选）
     cache_expire: 3600
 
@@ -71,17 +78,6 @@
 - nonebot-adapter-qq 1.6.5+
 - httpx 0.28.1+
 - pydantic 1.10.0+
-
-## 数据来源
-
-物品价格数据来源于 DeltaForce 游戏社区，通过以下URL获取：
-`https://raw.githubusercontent.com/orzice/DeltaForcePrice/master/price.json`
-
-## 问题反馈
-
-如果您在使用过程中遇到任何问题或有改进建议，请通过以下方式联系：
-
-- GitHub Issues: [项目Issues页面](https://github.com/orzice/DeltaForcePrice/issues)
 
 ## 许可证
 

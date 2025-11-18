@@ -1,6 +1,6 @@
 [project]
 name = "nonebot-plugin-deltaforce-price-search"
-version = "1.0.0"
+version = "1.0.3"
 description = "DeltaForce游戏物品价格搜索插件"
 authors = [
     {name = "mmxd12", email = "252464880@qq.com"},
@@ -24,9 +24,12 @@ dependencies = [
     "pydantic>=1.10.0",
 ]
 
+[project.entry-points."nonebot.plugins"]
+"deltaforce-price-search" = "nonebot_plugin_deltaforce_price_search"
+
 [tool.black]
 line-length = 88
-target-version = ['py38']
+target-version = ['py39']
 
 [tool.isort]
 profile = "black"
